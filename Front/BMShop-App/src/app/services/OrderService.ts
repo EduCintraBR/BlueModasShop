@@ -39,6 +39,7 @@ export class OrderService {
         let products = await this.cartService.GetProductsByClientId(orderById.clientId)
 
         let completeOrder: object = {
+            "orderId": orderId.value.id,
             order,
             products
         }

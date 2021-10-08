@@ -8,6 +8,10 @@
                     <h4>Cliente</h4>
                     <hr>
                     <div class="info">
+                        <label><strong>Número do Pedido:</strong></label>
+                        <span class="value">{{finalOrder.orderId}}</span>
+                    </div>
+                    <div class="info">
                         <label><strong>Name:</strong></label>
                         <span class="value">{{finalOrder.order.name}}</span>
                     </div>
@@ -41,7 +45,7 @@
                                 <td>{{item.name}}</td>
                                 <td>R${{item.price}}</td>
                                 <td>{{item.quantity}}</td>
-                                <td>{{item.totalValue}}</td>
+                                <td>R${{item.totalValue}}</td>
                             </tr>
                         </tbody>
                     </table>

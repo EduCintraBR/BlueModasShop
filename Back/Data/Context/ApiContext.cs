@@ -18,11 +18,5 @@ namespace BlueModasShop.Data.Context
 
         public DbSet<Cart> Carts { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Client>().HasOne(c => c.Order).WithOne(o => o.Client).HasForeignKey<Order>(o => o.ClientId);
-        //    modelBuilder.Entity<Order>().HasMany(o => o.Cart).WithOne(c => c.Order);
-        //}
-
     }
 }
