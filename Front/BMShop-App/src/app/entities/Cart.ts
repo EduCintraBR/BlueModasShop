@@ -1,13 +1,10 @@
 import { Product } from "./Product";
 
 export class Cart {
-    public products: Product[];
+    public id: number;
+    public name: string;
+    public price: number;
     public quantity: number;
     public TotalValue: number;
-
-    constructor(){
-        this.quantity = 0; 
-        this.TotalValue = 0;
-        this.products = [];
-    }
+    public clientId: any;
 }

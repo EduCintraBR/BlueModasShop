@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   getQuantityCart(){
-    this.quantityCart =  this.cartService.GetCountListOfCart();
+    this.quantityCart = this.cartService.GetCountListOfCart();
     return this.quantityCart;
   }
 

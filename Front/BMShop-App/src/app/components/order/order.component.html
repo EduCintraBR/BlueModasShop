@@ -1,0 +1,52 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2>Detalhes do Pedido</h2>
+        <hr>
+        <div class="col-md-12 row">
+            <div class="col-md-4 border-right">
+                <div>
+                    <h4>Cliente</h4>
+                    <hr>
+                    <div class="info">
+                        <label><strong>Name:</strong></label>
+                        <span class="value">{{finalOrder.order.name}}</span>
+                    </div>
+                    <div class="info">
+                        <label><strong>Email:</strong></label>
+                        <span class="value">{{finalOrder.order.email}}</span>
+                    </div>
+                    <div class="info">
+                        <label><strong>Telefone:</strong></label>
+                        <span class="value">{{finalOrder.order.phone}}</span>
+                    </div>
+                    <div class="info">
+                        <label><strong>Valor total da compra:</strong></label>
+                        <span class="value">R${{finalOrder.order.totalValue}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h4>Produtos</h4>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Nome do Produto</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Valor Total</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of finalOrder.products">
+                                <td>{{item.name}}</td>
+                                <td>R${{item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.totalValue}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

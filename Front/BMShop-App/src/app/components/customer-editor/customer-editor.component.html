@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="SendForm()">
     <div class="mb-3">
-        <label for="name">Name:</label>
+        <label for="name">Nome:</label>
         <input id="name" class="form-control" type="text" formControlName="name">
     </div>
     <div class="mb-3">
@@ -8,10 +8,10 @@
         <input id="email" class="form-control" type="email" formControlName="email">
     </div>
     <div class="mb-3">
-        <label for="phone">Phone:</label>
+        <label for="phone">Telefone:</label>
         <input id="phone" class="form-control" type="text" formControlName="phone">
     </div>
     <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
     </div>
 </form>

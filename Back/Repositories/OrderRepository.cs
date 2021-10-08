@@ -18,11 +18,9 @@ namespace BlueModasShop.Repositories
             this._context = context;
         }
 
-        public async Task<Order> GetOrderById(Guid id)
+        public async Task<Order> GetOrderById(int id)
         {
             IQueryable<Order> query = this._context.Orders.AsNoTracking()
-                                      .Include(c => c.Client)
-                                      .Include(ca => ca.Cart)
                                       .Where(o => o.Id == id);
 
             return await query.FirstOrDefaultAsync();

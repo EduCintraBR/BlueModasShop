@@ -1,0 +1,11 @@
+.border-right {
+    border-right: 2px solid gray;
+}
+.info{
+    padding: 10px;
+    font-size: 18px;
+}
+
+.value {
+    margin-left: 20px;
+}

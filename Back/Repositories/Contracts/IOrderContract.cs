@@ -6,7 +6,7 @@ namespace BlueModasShop.Repositories.Contracts
 {
     public interface IOrderContract
     {
-        Task<Order> GetOrderById(Guid id);
+        Task<Order> GetOrderById(int id);
         Task<Order> SaveOrder(Order model);
     }
 }

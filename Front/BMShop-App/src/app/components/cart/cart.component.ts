@@ -1,7 +1,5 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { IProductInCart } from 'src/app/entities/IProductInCart';
-import { Product } from 'src/app/entities/Product';
 import { CartService } from 'src/app/services/CartService';
 
 @Component({
@@ -14,8 +12,10 @@ export class CartComponent implements OnInit {
   
   public products: IProductInCart[] = this.cartService.GetProductList()
   public totalValue: number = this.cartService.SumTotalValue();
+  public finalProductList: IProductInCart[] = []
 
   ngOnInit(): void {
+    this.products = this.cartService.GetProductList()
   }
 
   IncreaseQuantityInList(id: number){
@@ -50,7 +50,7 @@ export class CartComponent implements OnInit {
     this.products = this.cartService.GetProductList()
   }
 
-  teste(){
-
+  Checkout(){
+    this.finalProductList = this.cartService.GetProductList()
   }
 }

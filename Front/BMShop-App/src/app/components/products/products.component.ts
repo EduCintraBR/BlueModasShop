@@ -34,10 +34,10 @@ export class ProductsComponent implements OnInit {
       price: prod.price,
       quantity: 1,
       totalValue: prod.price * 1,
-      inList: false
+      inList: true
     }
 
-    this.cartService.AddToCart(productToCart)
+      this.cartService.AddToCart(productToCart)
   }
 
 }

@@ -11,8 +11,5 @@ namespace BlueModasShop.Entities
         public string Email { get; set; }
 
         public string Phone { get; set; }
-        
-        public Order Order { get; set; }
-
     }
 }

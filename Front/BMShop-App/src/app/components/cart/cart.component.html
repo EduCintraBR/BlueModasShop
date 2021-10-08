@@ -1,24 +1,24 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="text-center">Shop Cart</h2>
+        <h2 class="text-center">Carrinho de Compras</h2>
         <hr>
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total Value</th>
+                <th scope="col">Nome do Produto</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor Total</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let prod of products">
                 <th scope="row">{{prod.id}}</th>
                 <td>{{prod.name}}</td>
-                <td>{{prod.price}}</td>
+                <td>R${{prod.price}}</td>
                 <td>{{prod.quantity}}</td>
-                <td>{{prod.totalValue}}</td>
+                <td>R${{prod.totalValue}}</td>
                 <td><button class="btn btn-success" (click)="IncreaseQuantityInList(prod.id)" >+</button></td>
                 <td><button class="btn btn-danger" (click)="DecreaseQuantityInList(prod.id)">-</button></td>
             </tr>
@@ -26,7 +26,7 @@
         </table>
 
         <div class="d-grid gap-2">
-            <button class="btn btn-primary" (click)="teste()" type="submit">Checkout</button>
+            <button class="btn btn-primary" (click)="Checkout()" type="button" routerLink="customer">Finalizar Compra</button>
         </div>
     </div>
 </section> 

@@ -5,10 +5,16 @@ namespace BlueModasShop.Entities
 {
     public class Order
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+
         public int ClientId { get; set; }
-        public Client Client { get; set; }
-        public int CartId { get; set; }
-        public List<Cart> Cart { get; set; }
+
+        public string Name { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public decimal TotalValue { get; set; }
     }
 }

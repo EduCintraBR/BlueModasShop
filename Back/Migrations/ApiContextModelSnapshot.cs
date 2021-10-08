@@ -32,9 +32,6 @@ namespace BlueModasShop.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -45,10 +42,6 @@ namespace BlueModasShop.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("Carts");
                 });
@@ -76,17 +69,27 @@ namespace BlueModasShop.Migrations
 
             modelBuilder.Entity("BlueModasShop.Entities.Order", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ClientId")
-                        .IsUnique();
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Orders");
                 });
@@ -110,40 +113,6 @@ namespace BlueModasShop.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("BlueModasShop.Entities.Cart", b =>
-                {
-                    b.HasOne("BlueModasShop.Entities.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId");
-
-                    b.HasOne("BlueModasShop.Entities.Order", null)
-                        .WithMany("Cart")
-                        .HasForeignKey("OrderId");
-
-                    b.Navigation("Client");
-                });
-
-            modelBuilder.Entity("BlueModasShop.Entities.Order", b =>
-                {
-                    b.HasOne("BlueModasShop.Entities.Client", "Client")
-                        .WithOne("Order")
-                        .HasForeignKey("BlueModasShop.Entities.Order", "ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-                });
-
-            modelBuilder.Entity("BlueModasShop.Entities.Client", b =>
-                {
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("BlueModasShop.Entities.Order", b =>
-                {
-                    b.Navigation("Cart");
                 });
 #pragma warning restore 612, 618
         }

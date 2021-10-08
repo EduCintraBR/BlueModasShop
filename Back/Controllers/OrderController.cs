@@ -20,7 +20,7 @@ namespace BlueModasShop.Controllers
 
         [HttpGet]
         [Route("order/{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetById(int id)
         {
             try
             {
@@ -43,14 +43,7 @@ namespace BlueModasShop.Controllers
         {
             try
             {
-                var orderModel = new Order
-                {
-                    ClientId = model.ClientId,
-                    Client = model.Client,
-                    Cart = model.Cart
-                };
-
-                var orderSaved = await this._repository.SaveOrder(orderModel);
+                var orderSaved = await this._repository.SaveOrder(model);
                 var order = await this.GetById(model.Id);
 
                 return Ok(order);
